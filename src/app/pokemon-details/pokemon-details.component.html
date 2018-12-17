@@ -1,0 +1,36 @@
+
+<div *ngIf="pokemonDetails" class="row">
+
+  <h1>{{pokemonDetails.name | titlecase }}</h1>
+
+  <img *ngIf="pokemonDetails.sprites.back_default" [src]="pokemonDetails.sprites.back_default">
+  <img *ngIf="pokemonDetails.sprites.front_default" [src]="pokemonDetails.sprites.front_default">
+  
+  <img *ngIf="pokemonDetails.sprites.back_female" [src]="pokemonDetails.sprites.back_female">
+  <img *ngIf="pokemonDetails.sprites.front_female" [src]="pokemonDetails.sprites.front_female">
+
+  <img *ngIf="pokemonDetails.sprites.back_shiny" [src]="pokemonDetails.sprites.back_shiny">
+  <img *ngIf="pokemonDetails.sprites.front_shiny" [src]="pokemonDetails.sprites.front_shiny">
+
+  <img *ngIf="pokemonDetails.sprites.back_shiny_female" [src]="pokemonDetails.sprites.back_shiny_female">
+  <img *ngIf="pokemonDetails.sprites.front_shiny_female" [src]="pokemonDetails.sprites.front_shiny_female">
+
+  <table>
+      <thead>
+        <tr>
+            <th>Skill name</th>
+            <th>Value</th>
+            <th>Effort</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let stat of pokemonDetails.stats">
+          <td>{{stat.stat.name}}</td>
+          <td>{{stat.base_stat}}</td>
+          <td>{{stat.effort}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+</div> 
