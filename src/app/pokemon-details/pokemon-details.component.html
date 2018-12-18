@@ -35,6 +35,9 @@
 
     <h2>Performances des types similaires</h2>
 
+    <div *ngIf="!pokemonSkills" class="progress">
+      <div class="indeterminate" style="width: 70%"></div>
+  </div>
    <div *ngFor="let skill of pokemonSkills">
 
     <h3>Type {{skill.name}}</h3>
