@@ -19,6 +19,11 @@ export interface PokemonStat {
     stat: NameAndUrl;
 }
 
+export interface PokemonTypeSkills {
+    name: String;
+    skills: Map<string, number>
+}
+
 export interface PokemonSprites {
     back_default?: string;
     back_female?: string;

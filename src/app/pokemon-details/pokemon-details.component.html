@@ -33,4 +33,27 @@
       </tbody>
     </table>
 
+    <h2>Performances des types similaires</h2>
+
+   <div *ngFor="let skill of pokemonSkills">
+
+    <h3>Type {{skill.name}}</h3>
+    <table>
+      <thead>
+        <tr>
+            <th>Skill name</th>
+            <th>Value</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let stat of skill.skills | keyvalue">
+          <td>{{stat.key}}</td>
+          <td>{{stat.value| number:'0.0-2'}} 
+        </tr>
+      </tbody>
+    </table>
+
+   </div>
+
 </div> 

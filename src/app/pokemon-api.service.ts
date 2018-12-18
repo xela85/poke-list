@@ -3,9 +3,10 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map, flatMap } from 'rxjs/operators';
 import {List, update} from 'immutable';
 import { HttpClient } from '@angular/common/http';
-import { Pokemon, PokemonWithImage, PokemonDetails } from './model/pokemon';
+import { Pokemon, PokemonWithImage, PokemonDetails, PokemonTypeSkills } from './model/pokemon';
 
 const POKE_API_URL = "https://pokeapi.co/api/v2"
+const XELA_API_URL = "https://app-822da121-3f31-44c3-9c9e-13f9ee701cf2.cleverapps.io"
 const SPRITES_URL = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon"
 
 
@@ -42,6 +43,9 @@ export class PokemonApi {
         }));
   }
 
+  public getPokemonSkills(id: number): Observable<List<PokemonTypeSkills>> {
+    return this.http.get<List<PokemonTypeSkills>>(`${XELA_API_URL}/pokemons/${id}`)
+  }
 
 
   public getPokemonDetails(id: number): Observable<PokemonDetails> {
